@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Function to handle Ctrl+C (SIGINT)
+handle_interrupt() {
+    echo "Ctrl+C was pressed. Exiting the script gracefully."
+    exit 0
+}
+
+# Set up the trap to catch SIGINT (Ctrl+C)
+trap handle_interrupt SIGINT
+
+# Simulate a long-running process
+echo "Running... Press Ctrl+C to interrupt."
+while true; do
+    sleep 1
+done
+

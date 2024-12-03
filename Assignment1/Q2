@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Prompt for the user's name
+echo "Enter your name:"
+read name
+
+# Greet the user
+echo "Hello, $name! Welcome!"
+

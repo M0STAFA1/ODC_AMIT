@@ -1,0 +1,6 @@
+How can you use arithmetic operations within a shell script? 
+1- ((op1 + op2))
+2- let x=i+k
+3- expr a + b
+4- printf "%f" $x
+5- result=$(echo "scale=2; $a / $b" | bc)

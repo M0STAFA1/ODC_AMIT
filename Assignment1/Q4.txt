@@ -1,0 +1,3 @@
+Explain the differences between standard output (stdout) and standard error (stderr)?
+The Standard Output regular program output or result have value 1
+The Standard Error is error messages and diagnostic output have value 2

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Prompt for the directory
+echo "Enter the directory path to search for empty files:"
+read dir
+
+# Check if the directory exists
+if [ ! -d "$dir" ]; then
+    echo "Directory does not exist!"
+    exit 1
+fi
+
+# Find and list empty files in the specified directory
+find "$dir" -type f -empty -print
+
+# Inform the user if no empty files were found
+if [ $(find "$dir" -type f -empty -print | wc -l) -eq 0 ]; then
+    echo "No empty files found
+

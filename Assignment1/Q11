@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Check if any arguments are passed
+if [ $# -eq 0 ]; then
+    echo "No arguments provided. Please provide an array of numbers."
+    exit 1
+fi
+
+# Initialize a variable to hold the sum
+sum=0
+
+# Loop through the arguments and add them to the sum
+for num in "$@"
+do
+    # Check if the argument is a valid number
+    if [[ "$num" =~ ^-?[0-9]+$ ]]; then
+        sum=$((sum + num))
+    else
+        echo "Invalid input: '$num' is not a number."
+        exit 1
+    fi
+done
+
+# Output the result
+echo "The sum of the elements is: $sum"
+

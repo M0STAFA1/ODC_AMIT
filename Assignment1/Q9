@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Prompt for the directory path
+echo "Enter the directory path to convert filenames to lowercase:"
+read dir
+
+# Check if the directory exists
+if [ ! -d "$dir" ]; then
+    echo "Directory does not exist!"
+    exit 1
+fi
+
+# Loop through all files in the directory
+for file in "$dir"/*; do
+    # Check if it's a file and not a directory
+    if [ -f "$file" ]; then
+        # Get the lowercase version of the filename
+        lowercase=$(echo "$file" | tr '[:upper:]' '[:lower:]')
+
+        # Rename the file if the lowercase version is different
+        if [ "$file" != "$lowercase" ]; then
+            mv "$file" "$lowercase"
+            echo "Renamed '$file' to '$lowercase'"
+        fi
+    fi
+done
+
+echo "All filenames have been converted to lowercase."
+
